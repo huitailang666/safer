@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    
+      <ImageView
+        android:id="@+id/imgv_traffic_appicon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="5dp"/>
+    
+    <TextView
+        android:id="@+id/tv_traffic_appname"
+        style="@style/textview16sp"
+        android:textColor="@color/dark_gray"
+        android:layout_toRightOf="@+id/imgv_traffic_appicon"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:text="323232"
+        />
+    
+    <TextView
+        android:id="@+id/tv_traffic_received"
+        style="@style/textview16sp"
+        android:textColor="@color/dark_gray"
+        android:layout_toRightOf="@+id/tv_traffic_appname"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:text="323232"
+        />
+    
+    <TextView
+        android:id="@+id/tv_traffic_transmitted"
+        style="@style/textview16sp"
+        android:textColor="@color/dark_gray"
+        android:layout_toRightOf="@id/tv_traffic_received"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:text="768678"
+        />
+
+</RelativeLayout>

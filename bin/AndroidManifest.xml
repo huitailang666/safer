@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mobilesafe"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <instrumentation android:targetPackage="com.example.mobilesafe" android:name="android.test.InstrumentationTestRunner"></instrumentation>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+
+    <application
+        android:name="com.example.mobilesafe.App"
+        android:allowBackup="true"
+        android:icon="@drawable/huaji"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <uses-library 
+            android:name="android.test.runner"
+            />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ch2.activity.SetUp1Activity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="ch2.activity.SetUp2Activity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="ch2.activity.SetUp3Activity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="ch2.activity.SetUp4Activity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="ch2.activity.ContactSelectActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="ch2.activity.LostFindActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <activity
+            android:name="ch3.activity.SecurityPhoneActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <activity
+            android:name="ch3.activity.AddBlackNumberActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+		
+        <activity
+            android:name="ch4.activity.AppManagerActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        
+        <activity
+            android:name="ch5.activity.VirusScanActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <activity
+            android:name="ch5.activity.VirusScanSpeedActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <activity
+            android:name="ch6.activity.CacheClearListActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <activity
+            android:name="ch8.activity.TrafficActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        
+        
+        <receiver android:name="ch2.receiver.BootCompleteReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        
+        
+        <receiver 
+            android:name="ch2.receiver.MyDeviceAdminReceiver"
+            android:description="@string/sample_device_admin_description"
+            android:label="@string/sample_device_admin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN"
+            >
+            <meta-data 
+                android:name="android:app.device_admin"
+                android:resource="@xml/device_admin_sample"
+                />
+            <intent-filter >
+                <action 
+                    android:name="android.app.action.DEVICE_ADMIN_ENABLED"
+                    />
+                
+            </intent-filter>
+        </receiver>
+        
+        <receiver 
+            android:name="ch2.receiver.SmsLostFindReceiver"
+            >
+            <intent-filter 
+                android:priority="2147483647"
+                >
+                <action 
+                    android:name="android.provider.Telephony.SMS_RECEIVED"
+                    />
+                
+            </intent-filter>
+            
+        </receiver>
+        
+        <receiver 
+            android:name="ch3.receiver.InterceptSmsReceiver"
+            >
+            <intent-filter 
+                android:priority="2147483647"
+                >
+                <action 
+                    android:name="android.provider.Telephony.SMS_RECEIVED"
+                    />
+                
+            </intent-filter>
+            
+        </receiver>
+        
+        <receiver 
+            
+            android:name="ch8.receiver.ShutdownReceiver"
+            >
+            
+            <intent-filter 
+                
+                >
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+                
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name="ch8.receiver.BootCompletedReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        
+        
+        <service 
+            android:name="ch2.service.GPSLocationService"
+            android:persistent="true"
+            ></service>
+        
+        <service 
+            android:name="ch8.service.SaveTrafficService"
+            android:persistent="true"
+            ></service>
+        
+    </application>
+
+</manifest>
